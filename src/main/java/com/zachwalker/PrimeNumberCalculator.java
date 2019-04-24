@@ -28,6 +28,13 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 		
 		List<Integer> primeList = new ArrayList<Integer>();
 		
+		// below intended to switch startingValue and endingValue when input is provided in inverse order
+		if (startingValue > endingValue) {
+			int saveEndingValue = endingValue;
+			endingValue = startingValue;
+			startingValue = saveEndingValue;
+		}
+		
 		// primes start at 2, so this allows any range submitted less than to skip not prime possible numbers
 		if (startingValue < 2) {
 			startingValue = 2;
