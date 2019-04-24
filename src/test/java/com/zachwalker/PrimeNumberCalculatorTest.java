@@ -154,6 +154,14 @@ public class PrimeNumberCalculatorTest {
 	}
 	
 	@Test
+	public void generating_same_number_indicated_as_starting_and_ending_returns_list_of_size_1_if_prime() {
+		
+		List<Integer> primeList = testPNG.generate(2, 2);
+		
+		Assert.assertTrue(primeList.size() == 1);
+	}
+	
+	@Test
 	public void generating_same_number_indicated_as_starting_and_ending_does_not_return_that_number_if_not_prime() {
 		
 		List<Integer> primeList = testPNG.generate(6, 6);
