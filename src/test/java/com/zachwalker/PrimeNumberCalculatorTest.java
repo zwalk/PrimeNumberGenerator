@@ -50,6 +50,15 @@ public class PrimeNumberCalculatorTest {
 	}
 	
 	@Test
+	public void generating_7900_to_7920_returns_list_of_size_3() {
+		
+		List<Integer> primeList = testPNG.generate(7900, 7920);
+
+		Assert.assertTrue(primeList.size() == 3);
+		
+	}
+	
+	@Test
 	public void passing_inversed_range_10_as_starting_1_as_ending_still_returns_2_3_5_and_7() {
 		
 		List<Integer> primeList = testPNG.generate(10, 1);

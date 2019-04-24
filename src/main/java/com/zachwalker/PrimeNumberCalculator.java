@@ -50,6 +50,14 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 		return primeList;
 	}
 	
+	/**
+	 * 
+	 * isPrime supports generate by checking to see if the passed in int is a prime number
+	 * 
+	 * @param value number to check if it is prime
+	 * @return boolean determination if prime
+	 */
+	
 	private boolean isPrime(final int value) {
 		boolean isPrime = true;
 		
