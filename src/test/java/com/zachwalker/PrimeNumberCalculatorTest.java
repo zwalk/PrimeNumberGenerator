@@ -168,6 +168,14 @@ public class PrimeNumberCalculatorTest {
 		
 		Assert.assertFalse(primeList.contains(6));
 	}
+	
+	@Test
+	public void generating_same_number_indicated_as_starting_and_ending_returns_list_of_size_0_if_not_prime() {
+		
+		List<Integer> primeList = testPNG.generate(6, 6);
+		
+		Assert.assertTrue(primeList.size() == 0);
+	}
 
 
 }
