@@ -28,5 +28,14 @@ public class PrimeNumberCalculatorTest {
 		Assert.assertTrue(primeList.contains(7));
 		
 	}
+	
+	@Test
+	public void one_to_ten_returns_list_of_size_4() {
+		
+		List<Integer> primeList = testPNG.generate(1, 10);
+		
+		Assert.assertTrue(primeList.size() == 4);
+		
+	}
 
 }
