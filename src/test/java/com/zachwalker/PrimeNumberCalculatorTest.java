@@ -98,5 +98,13 @@ public class PrimeNumberCalculatorTest {
 		Assert.assertTrue(primeList.contains(7));
 		
 	}
+	
+	@Test
+	public void generating_with_starting_value_negatve_10_ending_value_positive_10_returns_list_of_size_4() {
+		
+		List<Integer> primeList = testPNG.generate(-10, 10);
+		
+		Assert.assertTrue(primeList.size() == 4);
+	}
 
 }
