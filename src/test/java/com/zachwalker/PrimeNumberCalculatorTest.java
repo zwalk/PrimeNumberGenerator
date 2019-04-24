@@ -86,5 +86,17 @@ public class PrimeNumberCalculatorTest {
 		
 		Assert.assertTrue(primeList.size() == 0);
 	}
+	
+	@Test
+	public void generating_with_starting_value_negative_ending_value_positive_returns_primes_in_range() {
+		
+		List<Integer> primeList = testPNG.generate(-10, 10);
+		
+		Assert.assertTrue(primeList.contains(2));
+		Assert.assertTrue(primeList.contains(3));
+		Assert.assertTrue(primeList.contains(5));
+		Assert.assertTrue(primeList.contains(7));
+		
+	}
 
 }
