@@ -1,5 +1,6 @@
 package com.zachwalker;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
@@ -23,10 +24,14 @@ public class PrimeNumberCalculatorTest {
 		
 		List<Integer> primeList = testPNG.generate(1, 10);
 		
-		Assert.assertTrue(primeList.contains(2));
-		Assert.assertTrue(primeList.contains(3));
-		Assert.assertTrue(primeList.contains(5));
-		Assert.assertTrue(primeList.contains(7));
+		List<Integer> correctPrimeList = new ArrayList<Integer>();
+		correctPrimeList.add(2);
+		correctPrimeList.add(3);
+		correctPrimeList.add(5);
+		correctPrimeList.add(7);
+		
+		Assert.assertTrue(primeList.equals(correctPrimeList));
+
 		
 	}
 	
@@ -44,9 +49,13 @@ public class PrimeNumberCalculatorTest {
 		
 		List<Integer> primeList = testPNG.generate(7900, 7920);
 		
-		Assert.assertTrue(primeList.contains(7901));
-		Assert.assertTrue(primeList.contains(7907));
-		Assert.assertTrue(primeList.contains(7919));
+		List<Integer> correctPrimeList = new ArrayList<Integer>();
+		correctPrimeList.add(7901);
+		correctPrimeList.add(7907);
+		correctPrimeList.add(7919);
+		
+		Assert.assertTrue(primeList.equals(correctPrimeList));
+
 		
 	}
 	
@@ -64,10 +73,13 @@ public class PrimeNumberCalculatorTest {
 		
 		List<Integer> primeList = testPNG.generate(10, 1);
 		
-		Assert.assertTrue(primeList.contains(2));
-		Assert.assertTrue(primeList.contains(3));
-		Assert.assertTrue(primeList.contains(5));
-		Assert.assertTrue(primeList.contains(7));
+		List<Integer> correctPrimeList = new ArrayList<Integer>();
+		correctPrimeList.add(2);
+		correctPrimeList.add(3);
+		correctPrimeList.add(5);
+		correctPrimeList.add(7);
+		
+		Assert.assertTrue(primeList.equals(correctPrimeList));
 		
 	}
 	
@@ -93,10 +105,14 @@ public class PrimeNumberCalculatorTest {
 		
 		List<Integer> primeList = testPNG.generate(-10, 10);
 		
-		Assert.assertTrue(primeList.contains(2));
-		Assert.assertTrue(primeList.contains(3));
-		Assert.assertTrue(primeList.contains(5));
-		Assert.assertTrue(primeList.contains(7));
+		List<Integer> correctPrimeList = new ArrayList<Integer>();
+		correctPrimeList.add(2);
+		correctPrimeList.add(3);
+		correctPrimeList.add(5);
+		correctPrimeList.add(7);
+		
+		Assert.assertTrue(primeList.equals(correctPrimeList));
+		
 		
 	}
 	
@@ -113,10 +129,13 @@ public class PrimeNumberCalculatorTest {
 		
 		List<Integer> primeList = testPNG.generate(10, -10);
 		
-		Assert.assertTrue(primeList.contains(2));
-		Assert.assertTrue(primeList.contains(3));
-		Assert.assertTrue(primeList.contains(5));
-		Assert.assertTrue(primeList.contains(7));
+		List<Integer> correctPrimeList = new ArrayList<Integer>();
+		correctPrimeList.add(2);
+		correctPrimeList.add(3);
+		correctPrimeList.add(5);
+		correctPrimeList.add(7);
+		
+		Assert.assertTrue(primeList.equals(correctPrimeList));
 		
 	}
 	
@@ -182,9 +201,13 @@ public class PrimeNumberCalculatorTest {
 	public void generating_80_to_100_returns_list_containing_83_89_and_97() {
 		List<Integer> primeList = testPNG.generate(80, 100);
 		
-		Assert.assertTrue(primeList.contains(83));
-		Assert.assertTrue(primeList.contains(89));
-		Assert.assertTrue(primeList.contains(97));
+		List<Integer> correctPrimeList = new ArrayList<Integer>();
+		correctPrimeList.add(83);
+		correctPrimeList.add(89);
+		correctPrimeList.add(97);
+		
+		Assert.assertTrue(primeList.equals(correctPrimeList));
+
 	}
 	
 	@Test
@@ -192,9 +215,47 @@ public class PrimeNumberCalculatorTest {
 		
 		List<Integer> primeList = testPNG.generate(13, 47);
 		
+		
 		Assert.assertTrue(primeList.contains(13));
 		Assert.assertTrue(primeList.contains(47));
 		
+	}
+	
+	@Test
+	public void generating_0_to_102_returns_first_26_prime_numbers() {
+		
+		List<Integer> primeList = testPNG.generate(0, 102);
+		
+		List<Integer> correctPrimeList = new ArrayList<Integer>();
+		correctPrimeList.add(2);
+		correctPrimeList.add(3);
+		correctPrimeList.add(5);
+		correctPrimeList.add(7);
+		correctPrimeList.add(11);
+		correctPrimeList.add(13);
+		correctPrimeList.add(17);
+		correctPrimeList.add(19);
+		correctPrimeList.add(23);
+		correctPrimeList.add(29);
+		correctPrimeList.add(31);
+		correctPrimeList.add(37);
+		correctPrimeList.add(41);
+		correctPrimeList.add(43);
+		correctPrimeList.add(47);
+		correctPrimeList.add(53);
+		correctPrimeList.add(59);
+		correctPrimeList.add(61);
+		correctPrimeList.add(67);
+		correctPrimeList.add(71);
+		correctPrimeList.add(73);
+		correctPrimeList.add(79);
+		correctPrimeList.add(83);
+		correctPrimeList.add(89);
+		correctPrimeList.add(97);
+		correctPrimeList.add(101);
+		
+		Assert.assertTrue(primeList.equals(correctPrimeList));
+	
 	}
 
 

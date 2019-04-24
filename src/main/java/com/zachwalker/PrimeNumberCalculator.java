@@ -41,9 +41,26 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 		}
 		
 		for (int j = startingValue; j <= endingValue; j++) {
-			if (isPrime(j)) {
-				primeList.add(j);
+			
+			
+			/**
+			 * this is to check if the last digit of the number follows the pattern discovered by 
+			 * Kannan Soundararajan and Robert Lemke Oliver of Stanford University that states that apart from 2 and 5
+			 * all prime numbers need to end in 1, 3, 7, or 9. Otherwise, they would be divisible by 2 or 5.
+			 */
+			if (j % 10 == 1 || j % 10 == 3 || j % 10 == 7 || j % 10 == 9 || j == 5 || j == 2) {
+				
+				if (isPrime(j)) {
+					primeList.add(j);
+					
+					//after 2 and 3, there are no primes that are consecutive numbers, this will skip the next number after a prime
+					if (j > 2) {
+						j++;
+					}
+				}	
+			
 			}
+
 		}
 
 		
