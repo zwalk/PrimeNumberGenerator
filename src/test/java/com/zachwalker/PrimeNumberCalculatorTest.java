@@ -176,6 +176,15 @@ public class PrimeNumberCalculatorTest {
 		
 		Assert.assertTrue(primeList.size() == 0);
 	}
+	
+	@Test
+	public void generating_80_to_100_returns_list_containing_83_89_and_97() {
+		List<Integer> primeList = testPNG.generate(80, 100);
+		
+		Assert.assertTrue(primeList.contains(83));
+		Assert.assertTrue(primeList.contains(89));
+		Assert.assertTrue(primeList.contains(97));
+	}
 
 
 }
