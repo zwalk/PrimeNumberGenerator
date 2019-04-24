@@ -136,6 +136,14 @@ public class PrimeNumberCalculatorTest {
 		
 	}
 	
+	@Test
+	public void generating_range_with_no_primes_returns_list_of_size_0() {
+		
+		List<Integer> primeList = testPNG.generate(8, 10);
+		
+		Assert.assertTrue(primeList.size() == 0);
+		
+	}
 
 
 }
