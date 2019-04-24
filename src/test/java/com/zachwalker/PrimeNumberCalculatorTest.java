@@ -152,6 +152,14 @@ public class PrimeNumberCalculatorTest {
 		
 		Assert.assertTrue(primeList.contains(2));
 	}
+	
+	@Test
+	public void generating_same_number_indicated_as_starting_and_ending_does_not_return_that_number_if_not_prime() {
+		
+		List<Integer> primeList = testPNG.generate(6, 6);
+		
+		Assert.assertFalse(primeList.contains(6));
+	}
 
 
 }
