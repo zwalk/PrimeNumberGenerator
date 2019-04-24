@@ -257,6 +257,14 @@ public class PrimeNumberCalculatorTest {
 		Assert.assertTrue(primeList.equals(correctPrimeList));
 	
 	}
+	
+	@Test
+	public void generate_0_0_does_not_return_null_list() {
+		
+		List<Integer> primeList = testPNG.generate(0, 0);
+		
+		Assert.assertNotNull(primeList);
+	}
 
 
 }
