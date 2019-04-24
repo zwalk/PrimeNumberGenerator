@@ -78,5 +78,13 @@ public class PrimeNumberCalculatorTest {
 		Assert.assertTrue(primeList.size() == 4);
 		
 	}
+	
+	@Test
+	public void generating_negative_range_returns_empty_list() {
+		
+		List<Integer> primeList = testPNG.generate(-10, -1);
+		
+		Assert.assertTrue(primeList.size() == 0);
+	}
 
 }
