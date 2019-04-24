@@ -266,5 +266,20 @@ public class PrimeNumberCalculatorTest {
 		Assert.assertNotNull(primeList);
 	}
 
+	@Test
+	public void generate_int_min_value_to_10_returns_valid_primes() {
+		
+		List<Integer> primeList = testPNG.generate(Integer.MIN_VALUE, 10);
+		
+		List<Integer> correctPrimeList = new ArrayList<Integer>();
+		correctPrimeList.add(2);
+		correctPrimeList.add(3);
+		correctPrimeList.add(5);
+		correctPrimeList.add(7);
+		
+		Assert.assertTrue(primeList.equals(correctPrimeList));
+		
+	}
+
 
 }

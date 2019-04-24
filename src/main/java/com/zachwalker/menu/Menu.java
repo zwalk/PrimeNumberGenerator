@@ -116,9 +116,9 @@ public class Menu {
 		} catch(NumberFormatException e) {
 			//if caught, choice remains null and user will be asked again.
 			
-			System.out.println("*** " + userInput + " is not a valid number ***");
+			System.out.println("*** " + userInput + " is not a valid integer ***");
 			System.out.println();
-			System.out.print("Please Provide a Valid Number >>>  ");
+			System.out.print("Please Provide a Valid integer >>>  ");
 		}
 		
 		return choice;
