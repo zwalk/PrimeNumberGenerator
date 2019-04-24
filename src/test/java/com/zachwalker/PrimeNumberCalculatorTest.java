@@ -8,6 +8,7 @@ import org.junit.Test;
 
 public class PrimeNumberCalculatorTest {
 	
+	//PrimeNumberGenerator to complete testing with
 	private PrimeNumberGenerator testPNG;
 	
 	@Before
