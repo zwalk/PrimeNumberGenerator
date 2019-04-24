@@ -48,5 +48,17 @@ public class PrimeNumberCalculatorTest {
 		Assert.assertTrue(primeList.contains(7919));
 		
 	}
+	
+	@Test
+	public void passing_inversed_range_10_as_starting_1_as_ending_still_returns_2_3_5_and_7() {
+		
+		List<Integer> primeList = testPNG.generate(10, 1);
+		
+		Assert.assertTrue(primeList.contains(2));
+		Assert.assertTrue(primeList.contains(3));
+		Assert.assertTrue(primeList.contains(5));
+		Assert.assertTrue(primeList.contains(7));
+		
+	}
 
 }
