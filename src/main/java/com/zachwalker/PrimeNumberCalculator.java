@@ -54,7 +54,7 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 				break;
 			}
 			
-			if (i / value < i) {
+			if (value / i < i) {
 				break;
 			}
 		}
