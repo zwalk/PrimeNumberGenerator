@@ -50,6 +50,7 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 		return primeList;
 	}
 	
+	
 	/**
 	 * 
 	 * isPrime supports generate by checking to see if the passed in int is a prime number
@@ -76,7 +77,7 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 			/*
 			 * below condition is to test if we have covered all possible number pairs
 			 * for instance, if value = 10, when you get to i = 4, you are beginning to test previous numbers already tested
-			 * since 4 / 10 = 2
+			 * since 10 / 4 = 2
 			 */
 			if (value / i < i) {
 				break;

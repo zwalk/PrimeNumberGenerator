@@ -185,6 +185,16 @@ public class PrimeNumberCalculatorTest {
 		Assert.assertTrue(primeList.contains(89));
 		Assert.assertTrue(primeList.contains(97));
 	}
+	
+	@Test
+	public void generating_includes_both_start_and_endpoint_returns_them_if_prime() {
+		
+		List<Integer> primeList = testPNG.generate(13, 47);
+		
+		Assert.assertTrue(primeList.contains(13));
+		Assert.assertTrue(primeList.contains(47));
+		
+	}
 
 
 }
