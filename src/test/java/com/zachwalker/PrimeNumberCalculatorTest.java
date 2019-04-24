@@ -126,5 +126,16 @@ public class PrimeNumberCalculatorTest {
 		
 		Assert.assertTrue(primeList.size() == 4);
 	}
+	
+	@Test
+	public void generating_100000_to_110000_returns_list_of_size_861() {
+		
+		List<Integer> primeList = testPNG.generate(100000, 110000);
+		
+		Assert.assertTrue(primeList.size() == 861);
+		
+	}
+	
+
 
 }
