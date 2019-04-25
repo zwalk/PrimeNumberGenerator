@@ -12,10 +12,18 @@ public class PrimeNumberCalculatorTest {
 	//PrimeNumberGenerator to complete testing with
 	private PrimeNumberGenerator testPNG;
 	
+	//list for tests to reference, all primes 1 through 10
+	private List<Integer> correctPrimeList1Through10 = new ArrayList<Integer>();
+	
 	@Before
 	public void setup() {
 		
 		testPNG = new PrimeNumberCalculator();
+		
+		correctPrimeList1Through10.add(2);
+		correctPrimeList1Through10.add(3);
+		correctPrimeList1Through10.add(5);
+		correctPrimeList1Through10.add(7);
 		
 	}
 	
@@ -24,13 +32,9 @@ public class PrimeNumberCalculatorTest {
 		
 		List<Integer> primeList = testPNG.generate(1, 10);
 		
-		List<Integer> correctPrimeList = new ArrayList<Integer>();
-		correctPrimeList.add(2);
-		correctPrimeList.add(3);
-		correctPrimeList.add(5);
-		correctPrimeList.add(7);
+
 		
-		Assert.assertTrue(primeList.equals(correctPrimeList));
+		Assert.assertTrue(primeList.equals(correctPrimeList1Through10));
 
 		
 	}
@@ -73,13 +77,9 @@ public class PrimeNumberCalculatorTest {
 		
 		List<Integer> primeList = testPNG.generate(10, 1);
 		
-		List<Integer> correctPrimeList = new ArrayList<Integer>();
-		correctPrimeList.add(2);
-		correctPrimeList.add(3);
-		correctPrimeList.add(5);
-		correctPrimeList.add(7);
+
 		
-		Assert.assertTrue(primeList.equals(correctPrimeList));
+		Assert.assertTrue(primeList.equals(correctPrimeList1Through10));
 		
 	}
 	
@@ -105,13 +105,9 @@ public class PrimeNumberCalculatorTest {
 		
 		List<Integer> primeList = testPNG.generate(-10, 10);
 		
-		List<Integer> correctPrimeList = new ArrayList<Integer>();
-		correctPrimeList.add(2);
-		correctPrimeList.add(3);
-		correctPrimeList.add(5);
-		correctPrimeList.add(7);
+
 		
-		Assert.assertTrue(primeList.equals(correctPrimeList));
+		Assert.assertTrue(primeList.equals(correctPrimeList1Through10));
 		
 		
 	}
@@ -129,13 +125,9 @@ public class PrimeNumberCalculatorTest {
 		
 		List<Integer> primeList = testPNG.generate(10, -10);
 		
-		List<Integer> correctPrimeList = new ArrayList<Integer>();
-		correctPrimeList.add(2);
-		correctPrimeList.add(3);
-		correctPrimeList.add(5);
-		correctPrimeList.add(7);
+
 		
-		Assert.assertTrue(primeList.equals(correctPrimeList));
+		Assert.assertTrue(primeList.equals(correctPrimeList1Through10));
 		
 	}
 	
@@ -271,13 +263,8 @@ public class PrimeNumberCalculatorTest {
 		
 		List<Integer> primeList = testPNG.generate(Integer.MIN_VALUE, 10);
 		
-		List<Integer> correctPrimeList = new ArrayList<Integer>();
-		correctPrimeList.add(2);
-		correctPrimeList.add(3);
-		correctPrimeList.add(5);
-		correctPrimeList.add(7);
 		
-		Assert.assertTrue(primeList.equals(correctPrimeList));
+		Assert.assertTrue(primeList.equals(correctPrimeList1Through10));
 		
 	}
 	
