@@ -279,5 +279,14 @@ public class PrimeNumberCalculatorTest {
 		Assert.assertTrue(primeList.equals(correctPrimeList));
 	}
 
+	@Test
+	public void generate_4_to_4_returns_empty_list() {
+		List<Integer> primeList = testPNG.generate(4, 4);
+		
+		List<Integer> correctPrimeList = new ArrayList<Integer>();
+
+		
+		Assert.assertTrue(primeList.equals(correctPrimeList));
+	}
 
 }

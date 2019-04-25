@@ -123,19 +123,12 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 	private boolean isPrime(final int value) {
 		boolean isPrime = true;
 		
-		//separates out the mod 2 calc, which is a one-off calculation
-		if (value % 2 == 0 && value != 2) {
-			
-			isPrime = false;
-			
-			return isPrime;
-		}
-		
-		
 		/*
 		 * increments by 2 because any even number would be evenly divisible by 2
 		 * 
 		 * stops when you reach the square root of value
+		 * 
+		 * 2 will not pass through so will keep its true isPrime setting
 		 */
 		for (int i = 3; i <= value / i; i+=2) {
 			

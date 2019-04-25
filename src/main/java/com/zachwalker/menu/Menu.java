@@ -13,7 +13,7 @@ public class Menu {
 	 */
 	public void displayWelcomeMessage() {
 		
-		System.out.println("Hello! Welcome to Zach Walker's Prime Number Generator.");
+		System.out.println("\nHello! Welcome to Zach Walker's Prime Number Generator.");
 		System.out.println("All you need to do is let me know the range of numbers that you would like to test");
 		System.out.println("and I will output your primes from lowest value to highest value! Have Fun!");
 		System.out.println();
