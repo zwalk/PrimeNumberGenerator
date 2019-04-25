@@ -54,7 +54,11 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 					primeList.add(j);
 					
 					
-					//after 2 and 3, there are no primes that are consecutive numbers, this will skip the next number after a prime
+					/*
+					 * after 2 and 3, there are no primes that are consecutive numbers, this will skip the next number after a prime
+					 * check for Integer.MAX_VALUE since it is a prime and to make sure it doesn't get one added and revert to the Integer.MIN_VALUE
+					 */
+					
 					if (j > 2 && j != Integer.MAX_VALUE) {
 						j++;
 					}
