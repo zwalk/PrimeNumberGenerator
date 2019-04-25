@@ -28,6 +28,26 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 		
 		List<Integer> primeList = new ArrayList<Integer>();
 		
+		
+		primeList = validateStartingEndingOrder(startingValue, endingValue);
+		
+		
+
+
+		
+		return primeList;
+	}
+	
+
+	/**
+	 * validates the order of starting and ending values and makes sure starting is at least 2 since no primes are before 2
+	 * 
+	 * @param startingValue user provided value that is meant to specify the beginning of a range to test
+	 * @param endingValue user provided value meant to specify the end of a range to test
+	 * @return list of primes
+	 */
+	private List<Integer> validateStartingEndingOrder(int startingValue, int endingValue) {
+		
 		// below intended to switch startingValue and endingValue when input is provided in inverse order
 		if (startingValue > endingValue) {
 			int saveEndingValue = endingValue;
@@ -39,6 +59,21 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 		if (startingValue < 2) {
 			startingValue = 2;
 		}
+		
+		return buildPrimeList(startingValue, endingValue);
+	}
+	
+	/**
+	 * begins the initial loop to test the specified range after it has been validated. only checks numbers that follow the last digit
+	 * pattern of primes, increases by one after a prime is found larger than 2 since there is no prime gap of 1 other than 2 and 3
+	 * 
+	 * @param startingValue validated starting value of the range to test for primes
+	 * @param endingValue validated ending value of the range to test for primes
+	 * @return primeList list of found primes
+	 */
+	private List<Integer> buildPrimeList(int startingValue, int endingValue) {
+		
+		List<Integer> primeList = new ArrayList<Integer>();
 		
 		for (int j = startingValue; j <= endingValue; j++) {
 			
@@ -66,12 +101,12 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 			
 			}
 			
+			//condition to ensure loop doesn't increase past the max integer value
 			if (j == Integer.MAX_VALUE) {
 				break;
 			}
 
 		}
-
 		
 		return primeList;
 	}
@@ -88,31 +123,33 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 	private boolean isPrime(final int value) {
 		boolean isPrime = true;
 		
-		for (int i = 2; i < value; i++) {
+		//separates out the mod 2 calc, which is a one-off calculation
+		if (value % 2 == 0 && value != 2) {
+			
+			isPrime = false;
+			
+			return isPrime;
+		}
+		
+		
+		/*
+		 * increments by 2 because any even number would be evenly divisible by 2
+		 * 
+		 * stops when you reach the square root of value
+		 */
+		for (int i = 3; i <= value / i; i+=2) {
 			
 			//testing to see if value is divisible evenly by any natural numbers starting at 2
 			if (value % i == 0) {
 				isPrime = false;
 			}
 			
-			//removes all even numbers from being tested since 2 is the first number tested
-			if (i > 2) {
-				i++;
-			}
 			
 			//below condition stops loop once we have determined a number not to be a prime
 			if (! isPrime) {
 				break;
 			}
 			
-			/*
-			 * below condition is to test if we have covered all possible number pairs
-			 * for instance, if value = 10, when you get to i = 4, you are beginning to test previous numbers already tested
-			 * since 10 / 4 = 2
-			 */
-			if (value / i < i) {
-				break;
-			}
 		}
 		
 		return isPrime;
