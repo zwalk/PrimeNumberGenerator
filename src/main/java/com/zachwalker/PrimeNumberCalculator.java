@@ -86,6 +86,7 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 				isPrime = false;
 			}
 			
+			
 			//below condition stops loop once we have determined a number not to be a prime
 			if (! isPrime) {
 				break;

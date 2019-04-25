@@ -280,6 +280,17 @@ public class PrimeNumberCalculatorTest {
 		Assert.assertTrue(primeList.equals(correctPrimeList));
 		
 	}
+	
+	@Test
+	public void generate_2147483646_to_int_max_value_returns_just_max_value() {
+		List<Integer> primeList = testPNG.generate(2147483646, Integer.MAX_VALUE);
+		
+		List<Integer> correctPrimeList = new ArrayList<Integer>();
+		correctPrimeList.add(2147483647);
+
+		
+		Assert.assertTrue(primeList.equals(correctPrimeList));
+	}
 
 
 }
