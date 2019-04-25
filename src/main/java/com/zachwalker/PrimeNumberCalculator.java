@@ -53,12 +53,17 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 				if (isPrime(j)) {
 					primeList.add(j);
 					
+					
 					//after 2 and 3, there are no primes that are consecutive numbers, this will skip the next number after a prime
-					if (j > 2) {
+					if (j > 2 && j != Integer.MAX_VALUE) {
 						j++;
 					}
 				}	
 			
+			}
+			
+			if (j == Integer.MAX_VALUE) {
+				break;
 			}
 
 		}
@@ -86,6 +91,10 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 				isPrime = false;
 			}
 			
+			//removes all even numbers from being tested since 2 is the first number tested
+			if (i > 2) {
+				i++;
+			}
 			
 			//below condition stops loop once we have determined a number not to be a prime
 			if (! isPrime) {

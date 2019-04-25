@@ -43,10 +43,9 @@ public class Menu {
 			
 			System.out.println();
 			
-			for (int prime : primeList) {
-				System.out.print(prime + " ");
-			}
+			System.out.println(primeList);
 			
+
 		} else {
 			
 			System.out.print("There are no prime numbers in that range!");
