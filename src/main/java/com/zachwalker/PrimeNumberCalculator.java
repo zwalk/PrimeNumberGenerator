@@ -71,7 +71,7 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 	 * @param endingValue validated ending value of the range to test for primes
 	 * @return primeList list of found primes
 	 */
-	private List<Integer> buildPrimeList(int startingValue, int endingValue) {
+	private List<Integer> buildPrimeList(final int startingValue, final int endingValue) {
 		
 		List<Integer> primeList = new ArrayList<Integer>();
 		
