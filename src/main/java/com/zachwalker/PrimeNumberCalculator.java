@@ -132,7 +132,7 @@ public class PrimeNumberCalculator implements PrimeNumberGenerator {
 		 */
 		for (int i = 3; i <= value / i; i+=2) {
 			
-			//testing to see if value is divisible evenly by any natural numbers starting at 2
+			//testing to see if value is divisible evenly by any natural numbers starting at 3
 			if (value % i == 0) {
 				isPrime = false;
 			}
